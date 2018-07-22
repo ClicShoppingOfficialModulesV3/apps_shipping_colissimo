@@ -15,7 +15,7 @@ http://monsite/myAdmin/index.php?A&Shipping\Colissimo
 
 Activate the module in Shipping
 
-link marketplace : https://www.clicshopping.org/forum/files/file/42-apps-colissimo-french-post/
+link marketplace : https://www.clicshopping.org/forum/files/file/37-apps-shipping-colissimo/
 
 ![image](https://github.com/ClicShoppingOfficialModulesV3/apps_shipping_colissimo/blob/master/MouleInfosJson/colissimo.png)
 
