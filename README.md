@@ -28,6 +28,7 @@ Copy the apps_shipping_colissimo.json into ClicShopping/Work/Cache/Github (manua
 Install :
 
 http://monsite/myAdmin/index.php?A&Shipping\Colissimo
+
 Activate the module in Shipping
 
 
