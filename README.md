@@ -34,10 +34,15 @@ Activate the module in Shipping
  All informations about the ClicShopping
 
 Community : https://www.clicshopping.org
+
 Software : https://github.com/ClicShopping
+
 Official add on : https://github.com/ClicShoppingOfficialModulesV3
+
 Community add on : https://github.com/ClicShoppingV3Community
+
 trademark License info : https://www.clicshopping.org/forum/trademark/ 
+
 
 ![image](https://github.com/ClicShoppingOfficialModulesV3/apps_shipping_colissimo/blob/master/ModuleInfosJson/colissimo.png)
 
