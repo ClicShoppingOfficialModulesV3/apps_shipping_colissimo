@@ -1,0 +1,16 @@
+module_colissimo_title = Colissimo French Post
+module_shipping_colissimo_text_title = Colissimo French Post
+module_shipping_colissimor1_text_title = Colissimo R1 (Insurance : 50 Euros)
+module_shipping_colissimor2_text_title = Colissimo R2 (Insurance : 200 Euros)
+module_shipping_colissimor3_text_title = Colissimo R3 (Insurance : 400 Euros)
+module_shipping_colissimor4_text_title = Colissimo R4 (Insurance : 600 Euros)
+module_shipping_colissimor5_text_title = Colissimo R5 (Insurance : 800 Euros)
+module_shipping_colissimo_text_units = kg
+module_shipping_colissimo_invalid_zone = This zone is not covered
+module_shipping_colissimo_too_heavy = Too heavy for this shipping method
+module_shipping_colissimo_int_text_description = International  Zones price
+module_shipping_colissimo_int_text_way = Shipping to
+module_shipping_colissimo_int_text_units = Weight (in kg)
+module_shipping_colissimo_int_invalid_zone = This zone is not covered
+module_shipping_colissimo_intl_undefined_rate = The shipping rate for that zone cannot be determined at this time
+

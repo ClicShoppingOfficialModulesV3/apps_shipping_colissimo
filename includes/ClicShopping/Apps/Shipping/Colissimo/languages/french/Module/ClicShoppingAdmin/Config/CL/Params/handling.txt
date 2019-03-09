@@ -1,0 +1,2 @@
+cfg_colissimo_handling_title = Frais fixes
+cfg_colissimo_handling_desc = Frais fixes (emballage) pour colissimo

@@ -1,0 +1,2 @@
+cfg_colissimo_colissimor3_dom_title = Colissimo Zone DOM 1 R3
+cfg_colissimo_colissimor3_dom_desc = Price TTC Colissimo

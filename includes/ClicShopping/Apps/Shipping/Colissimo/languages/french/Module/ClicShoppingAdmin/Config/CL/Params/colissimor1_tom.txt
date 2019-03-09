@@ -1,0 +1,2 @@
+cfg_colissimo_colissimor1_tom_title = Colissimo Zone TOM 2 R1
+cfg_colissimo_colissimor1_tom_desc = Tarif TTC Colissimo

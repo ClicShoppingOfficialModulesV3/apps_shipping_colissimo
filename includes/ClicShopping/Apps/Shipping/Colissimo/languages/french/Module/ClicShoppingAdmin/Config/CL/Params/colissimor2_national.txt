@@ -1,0 +1,2 @@
+cfg_colissimo_colissimor2_national_title = Colissimo R2
+cfg_colissimo_colissimor2_national_desc = Tarif TTC Colissimo

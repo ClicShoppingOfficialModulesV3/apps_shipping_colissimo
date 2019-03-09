@@ -1,0 +1,15 @@
+module_colissimo_title = Colissimo French Post
+module_shipping_colissimo_text_title = Colissimo France
+module_shipping_colissimor1_text_title = Colissimo R1 (Indemnisation de 50 Euros)
+module_shipping_colissimor2_text_title = Colissimo R2 (Indemnisation de 200 Euros)
+module_shipping_colissimor3_text_title = Colissimo R3 (Indemnisation de 400 Euros)
+module_shipping_colissimor4_text_title = Colissimo R4 (Indemnisation de 600 Euros)
+module_shipping_colissimor5_text_title = Colissimo R5 (Indemnisation de 800 Euros)
+module_shipping_colissimo_text_units = kg
+module_shipping_colissimo_invalid_zone = Cette zone n'est pas couverte
+module_shipping_colissimo_too_heavy = Colis trop lourd pour cette méthode de livraison
+module_shipping_colissimo_int_text_description = Tarifs Zones Internationales
+module_shipping_colissimo_int_text_way = Livraison vers
+module_shipping_colissimo_int_text_units = Poids (en kg)
+module_shipping_colissimo_int_invalid_zone = Pas d'expédition Colissimo disponible vers ce pays
+module_shipping_colissimo_intl_undefined_rate = Les frais de port ne peuvent etre calculés pour le moment et seront ajoutés a votre commande

@@ -1,0 +1,29 @@
+heading_title = Colissimo
+module_colissimo_title = Configuration
+
+text_colissimo =  Expédition par Colissimo
+text_configure =  Configurer le module
+
+text_intro = Cette app vous permet d'include une nouvelle méthode d'expédition <br /><br />
+- Activer ce module qui est situé dans le menu Configuration / Shipping
+
+module_colissimo_introduction = Le processus d'installation installe la base de données et le menu
+
+button_back = Retour
+button_install_title = Installer
+button_configure = Configurer
+button_save = Sauver
+button_dialog_uninstall = Désinstaller
+button_uninstall = Désinstaller
+button_cancel = Annuler
+button_delete = Suprimer
+button_sort_order = Ordre de tri
+
+dialog_uninstall_title = Désinstaller
+dialog_uninstall_body = Souhaitez-vous installer cette App ?
+dialog_uninstall_title = Désinstaller le module?
+dialog_uninstall_body = Etes vous sur de désinstaller ce module?
+
+alert_module_install_success = Le module a été installé.
+alert_module_uninstall_success = Le module a été désinstallé.
+alert_cfg_saved_success = les paramètres de configuration ont été mises à jour.

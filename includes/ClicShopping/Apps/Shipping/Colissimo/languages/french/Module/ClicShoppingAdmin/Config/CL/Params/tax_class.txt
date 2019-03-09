@@ -1,0 +1,3 @@
+cfg_colissimo_tax_class_title = Tax Class
+cfg_colissimo_tax_class_desc = Select the tax class than you want applied
+cfg_colissimo_zone_none = -- None --

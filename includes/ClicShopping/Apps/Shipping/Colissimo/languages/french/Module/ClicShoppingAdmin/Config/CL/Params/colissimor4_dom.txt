@@ -1,0 +1,2 @@
+cfg_colissimo_colissimor4_dom_title = Colissimo Zone DOM 1 R4
+cfg_colissimo_colissimor4_dom_desc = Tarif TTC Colissimo
