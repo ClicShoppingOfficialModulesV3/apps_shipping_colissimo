@@ -41,7 +41,6 @@
       $this->app = Registry::get('Colissimo');
       $this->app->loadDefinitions('Module/Shop/CL/CL');
 
-
       $this->signature = 'Colissimo|' . $this->app->getVersion() . '|1.0';
       $this->api_version = $this->app->getApiVersion();
 
