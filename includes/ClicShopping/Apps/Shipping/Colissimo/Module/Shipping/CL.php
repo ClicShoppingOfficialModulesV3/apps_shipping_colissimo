@@ -124,10 +124,11 @@
 
 // Suppression de l'affichage si le poids est superieur à 30 kg
         if ($this->shipping_weight < 30) {
-          $this->quotes = [
-                            'id' => $this->app->vendor . '\\' . $this->app->code . '\\' . $this->code,
-                            'module' => $this->app->getDef('module_shipping_colissimo_text_title') . ' NATIONAL (' . $this->shipping_weight . ' Kg)'
+
+          $this->quotes = ['id' => $this->app->vendor . '\\' . $this->app->code . '\\' . $this->code,
+                           'module' => $this->app->getDef('module_shipping_colissimo_text_title') . ' NATIONAL (' . $this->shipping_weight . ' Kg)'
                           ];
+
           $methods = [];
 
           if (!empty($this->icon)) $this->quotes['icon'] = HTML::image($this->icon, $this->title);
@@ -212,11 +213,11 @@
 
         if (constant('CLICSHOPPING_APP_COLISSIMO_CL_DOM_STATUS') == 'True') {
           if ($this->shipping_weight < 30) {
-            $this->quotes = array(
-                              'id' => $this->code,
+            $this->quotes = [ 'id' => $this->code,
                               'module' =>$this->app->getDef('module_shipping_colissimo_text_title') . ' DOM (' . $this->shipping_weight . ' Kg)'
-                            );
-            $methods = array();
+                            ];
+
+            $methods = [];
 
             if (!empty($this->icon)) $this->quotes['icon'] = HTML::image($this->icon, $this->title);
           }
@@ -297,11 +298,12 @@
         if (constant('CLICSHOPPING_APP_COLISSIMO_CL_TOM_STATUS') == 'True') {
 
           if ($this->shipping_weight < 30) {
-            $this->quotes = array(
-              'id' => $this->app->vendor . '\\' . $this->app->code . '\\' . $this->code,
-              'module' =>$this->app->getDef('module_shipping_colissimo_text_title') . ' TOM (' . $this->shipping_weight . ' Kg)'
-            );
-            $methods = array();
+            $this->quotes = ['id' => $this->app->vendor . '\\' . $this->app->code . '\\' . $this->code,
+                            'module' =>$this->app->getDef('module_shipping_colissimo_text_title') . ' TOM (' . $this->shipping_weight . ' Kg)'
+                            ];
+
+            $methods = [];
+
             if (!empty($this->icon)) $this->quotes['icon'] = HTML::image($this->icon, $this->title);
           }
 
