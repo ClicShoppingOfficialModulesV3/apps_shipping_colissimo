@@ -1,13 +1,13 @@
 <?php
-/**
- *
- *  @copyright 2008 - https://www.clicshopping.org
- *  @Brand : ClicShopping(Tm) at Inpi all right Reserved
- *  @Licence GPL 2 & MIT
- *  @licence MIT - Portion of osCommerce 2.4
- *  @Info : https://www.clicshopping.org/forum/trademark/
- *
- */
+  /**
+   *
+   * @copyright 2008 - https://www.clicshopping.org
+   * @Brand : ClicShopping(Tm) at Inpi all right Reserved
+   * @Licence GPL 2 & MIT
+   * @licence MIT - Portion of osCommerce 2.4
+   * @Info : https://www.clicshopping.org/forum/trademark/
+   *
+   */
 
   namespace ClicShopping\Apps\Shipping\Colissimo\Module\Shipping;
 
@@ -17,7 +17,8 @@
   use ClicShopping\Apps\Shipping\Colissimo\Colissimo as ColissimoApp;
   use ClicShopping\Sites\Common\B2BCommon;
 
-  class CL implements \ClicShopping\OM\Modules\ShippingInterface  {
+  class CL implements \ClicShopping\OM\Modules\ShippingInterface
+  {
 
     public $code;
     public $title;
@@ -27,7 +28,8 @@
     public $app;
     public $quotes;
 
-    public function __construct() {
+    public function __construct()
+    {
       $CLICSHOPPING_Customer = Registry::get('Customer');
 
       if (Registry::exists('Order')) {
@@ -51,10 +53,10 @@
 
 // Activation module du paiement selon les groupes B2B
       if ($CLICSHOPPING_Customer->getCustomersGroupID() != 0) {
-        if ( B2BCommon::getShippingUnallowed($this->code) ) {
+        if (B2BCommon::getShippingUnallowed($this->code)) {
           if (CLICSHOPPING_APP_COLISSIMO_CL_STATUS == 'True') {
             $this->enabled = true;
-          }  else {
+          } else {
             $this->enabled = false;
           }
         }
@@ -63,7 +65,7 @@
           if ($CLICSHOPPING_Customer->getCustomersGroupID() == 0) {
             if (CLICSHOPPING_APP_COLISSIMO_CL_STATUS == 'True') {
               $this->enabled = true;
-            }  else {
+            } else {
               $this->enabled = false;
             }
           }
@@ -72,25 +74,25 @@
 
       if (defined('CLICSHOPPING_APP_COLISSIMO_CL_TAX_CLASS')) {
         if ($CLICSHOPPING_Customer->getCustomersGroupID() != 0) {
-          if ( B2BCommon::getTaxUnallowed($this->code) || !$CLICSHOPPING_Customer->isLoggedOn()  ) {
+          if (B2BCommon::getTaxUnallowed($this->code) || !$CLICSHOPPING_Customer->isLoggedOn()) {
             $this->tax_class = defined('CLICSHOPPING_APP_COLISSIMO_CL_TAX_CLASS') ? CLICSHOPPING_APP_COLISSIMO_CL_TAX_CLASS : 0;
 
           }
         } else {
-          if ( B2BCommon::getTaxUnallowed($this->code) ) {
+          if (B2BCommon::getTaxUnallowed($this->code)) {
             $this->tax_class = defined('CLICSHOPPING_APP_COLISSIMO_CL_TAX_CLASS') ? CLICSHOPPING_APP_COLISSIMO_CL_TAX_CLASS : 0;
           }
         }
       }
 
-      if ( ($this->enabled === true) && ((int)CLICSHOPPING_APP_COLISSIMO_CL_ZONE > 0) ) {
+      if (($this->enabled === true) && ((int)CLICSHOPPING_APP_COLISSIMO_CL_ZONE > 0)) {
         $check_flag = false;
 
         $Qcheck = $this->app->db->get('zones_to_geo_zones', 'zone_id', ['geo_zone_id' => (int)CLICSHOPPING_APP_COLISSIMO_CL_ZONE,
-                                                                        'zone_country_id' => $CLICSHOPPING_Order->delivery['country']['id']
-                                                                       ],
-                                                                       'zone_id'
-                                      );
+          'zone_country_id' => $CLICSHOPPING_Order->delivery['country']['id']
+        ],
+          'zone_id'
+        );
 
         while ($Qcheck->fetch()) {
           if (($Qcheck->valueInt('zone_id') < 1) || ($Qcheck->valueInt('zone_id') == $CLICSHOPPING_Order->delivery['zone_id'])) {
@@ -109,7 +111,8 @@
       }
     }
 
-    public function quote($method = '') {
+    public function quote($method = '')
+    {
       $CLICSHOPPING_ShoppingCart = Registry::get('ShoppingCart');
       $CLICSHOPPING_Order = Registry::get('Order');
       $CLICSHOPPING_Tax = Registry::get('Tax');
@@ -126,8 +129,8 @@
         if ($this->shipping_weight < 30) {
 
           $this->quotes = ['id' => $this->app->vendor . '\\' . $this->app->code . '\\' . $this->code,
-                           'module' => $this->app->getDef('module_shipping_colissimo_text_title') . ' NATIONAL (' . $this->shipping_weight . ' Kg)'
-                          ];
+            'module' => $this->app->getDef('module_shipping_colissimo_text_title') . ' NATIONAL (' . $this->shipping_weight . ' Kg)'
+          ];
 
           $methods = [];
 
@@ -213,9 +216,9 @@
 
         if (constant('CLICSHOPPING_APP_COLISSIMO_CL_DOM_STATUS') == 'True') {
           if ($this->shipping_weight < 30) {
-            $this->quotes = [ 'id' => $this->code,
-                              'module' =>$this->app->getDef('module_shipping_colissimo_text_title') . ' DOM (' . $this->shipping_weight . ' Kg)'
-                            ];
+            $this->quotes = ['id' => $this->code,
+              'module' => $this->app->getDef('module_shipping_colissimo_text_title') . ' DOM (' . $this->shipping_weight . ' Kg)'
+            ];
 
             $methods = [];
 
@@ -299,8 +302,8 @@
 
           if ($this->shipping_weight < 30) {
             $this->quotes = ['id' => $this->app->vendor . '\\' . $this->app->code . '\\' . $this->code,
-                            'module' =>$this->app->getDef('module_shipping_colissimo_text_title') . ' TOM (' . $this->shipping_weight . ' Kg)'
-                            ];
+              'module' => $this->app->getDef('module_shipping_colissimo_text_title') . ' TOM (' . $this->shipping_weight . ' Kg)'
+            ];
 
             $methods = [];
 
@@ -380,10 +383,10 @@
 
       } elseif (constant('CLICSHOPPING_APP_COLISSIMO_CL_INT_STATUS') == 'True') {
         $this->quotes = array(
-                          'id' => $this->app->vendor . '\\' . $this->app->code . '\\' . $this->code,
-                          'title' => $this->app->getDef('CLICSHOPPING_APP_COLISSIMO_CL_int_text_way') . ' ' . $CLICSHOPPING_Order->delivery['country']['title'],
-                          'cost' => $cost + CLICSHOPPING_APP_COLISSIMO_CL_HANDLING
-                        );
+          'id' => $this->app->vendor . '\\' . $this->app->code . '\\' . $this->code,
+          'title' => $this->app->getDef('CLICSHOPPING_APP_COLISSIMO_CL_int_text_way') . ' ' . $CLICSHOPPING_Order->delivery['country']['title'],
+          'cost' => $cost + CLICSHOPPING_APP_COLISSIMO_CL_HANDLING
+        );
 
         if (!empty(CLICSHOPPING_APP_COLISSIMO_CL_LOGO) && is_file($CLICSHOPPING_Template->getDirectoryTemplateImages() . 'logos/shipping/' . CLICSHOPPING_APP_COLISSIMO_CL_LOGO)) {
           $this->icon = $CLICSHOPPING_Template->getDirectoryTemplateImages() . 'logos/shipping/' . CLICSHOPPING_APP_COLISSIMO_CL_IMAGE;
@@ -397,10 +400,10 @@
 
         if ($this->shipping_weight < 30) {
           $this->quotes = array(
-                          'id' => $this->app->vendor . '\\' . $this->app->code . '\\' . $this->code,
-                          'module' =>$this->app->getDef('module_shipping_colissimo_text_title') . ' International (' . $this->shipping_weight . ' Kg)',
-                          'methods' => array()
-                          );
+            'id' => $this->app->vendor . '\\' . $this->app->code . '\\' . $this->code,
+            'module' => $this->app->getDef('module_shipping_colissimo_text_title') . ' International (' . $this->shipping_weight . ' Kg)',
+            'methods' => array()
+          );
           if (!empty($this->icon)) $this->quotes['icon'] = HTML::image($this->icon, $this->title);
         }
 
@@ -422,7 +425,7 @@
         }
 
         if ($dest_zone == 0) {
-          $this->quotes['error'] =$this->app->getDef('module_shipping_colissimo_int_invalid_zone');
+          $this->quotes['error'] = $this->app->getDef('module_shipping_colissimo_int_invalid_zone');
 
           return $this->quotes;
         }
@@ -438,7 +441,7 @@
         }
 
         if ($cost == -1) {
-          $this->quotes['error'] =$this->app->getDef('module_shipping_colissimo_intl_undefined_rate');
+          $this->quotes['error'] = $this->app->getDef('module_shipping_colissimo_intl_undefined_rate');
 
           return $this->quotes;
         }
@@ -454,19 +457,23 @@
       }
     }
 
-    public function check() {
+    public function check()
+    {
       return defined('CLICSHOPPING_APP_COLISSIMO_CL_STATUS') && (trim(CLICSHOPPING_APP_COLISSIMO_CL_STATUS) != '');
     }
 
-    public function install() {
+    public function install()
+    {
       $this->app->redirect('Configure&Install&module=Colissimo');
     }
 
-    public function remove() {
+    public function remove()
+    {
       $this->app->redirect('Configure&Uninstall&module=Colissimo');
     }
 
-    public function keys() {
+    public function keys()
+    {
       return array('CLICSHOPPING_APP_COLISSIMO_CL_SORT_ORDER');
     }
   }
