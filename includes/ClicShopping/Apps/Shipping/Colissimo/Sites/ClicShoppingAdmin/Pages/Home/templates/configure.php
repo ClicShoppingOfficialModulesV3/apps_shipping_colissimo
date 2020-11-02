@@ -21,8 +21,8 @@
 
   $CLICSHOPPING_Colissimo_Config = Registry::get('ColissimoAdminConfig' . $current_module);
 
-  if ($CLICSHOPPING_MessageStack->exists('Colissimo')) {
-    echo $CLICSHOPPING_MessageStack->get('Colissimo');
+  if ($CLICSHOPPING_MessageStack->exists('main')) {
+    echo $CLICSHOPPING_MessageStack->get('main');
   }
 ?>
 <div class="contentBody">

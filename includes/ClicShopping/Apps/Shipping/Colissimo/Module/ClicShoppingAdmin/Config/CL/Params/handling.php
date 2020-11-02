@@ -13,7 +13,7 @@
 
   class handling extends \ClicShopping\Apps\Shipping\Colissimo\Module\ClicShoppingAdmin\Config\ConfigParamAbstract
   {
-    public $default = '0';
+    public $default = 0;
     public $sort_order = 40;
 
     protected function init()

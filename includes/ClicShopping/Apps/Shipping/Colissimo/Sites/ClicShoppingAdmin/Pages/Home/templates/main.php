@@ -16,8 +16,8 @@
   $CLICSHOPPING_Colissimo = Registry::get('Colissimo');
   $CLICSHOPPING_MessageStack = Registry::get('MessageStack');
 
-  if ($CLICSHOPPING_MessageStack->exists('Colissimo')) {
-    echo $CLICSHOPPING_MessageStack->get('Colissimo');
+  if ($CLICSHOPPING_MessageStack->exists('main')) {
+    echo $CLICSHOPPING_MessageStack->get('main');
   }
 ?>
 <div class="contentBody">
