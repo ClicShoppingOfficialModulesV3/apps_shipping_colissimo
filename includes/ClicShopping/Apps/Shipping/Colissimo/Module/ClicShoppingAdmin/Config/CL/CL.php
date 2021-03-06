@@ -24,14 +24,14 @@
       $this->title = $this->app->getDef('module_colissimo_title');
       $this->short_title = $this->app->getDef('module_colissimo_short_title');
       $this->introduction = $this->app->getDef('module_colissimo_introduction');
-      $this->is_installed = defined('CLICSHOPPING_APP_COLISSIMO_CL_STATUS') && (trim(CLICSHOPPING_APP_COLISSIMO_CL_STATUS) != '');
+      $this->is_installed = \defined('CLICSHOPPING_APP_COLISSIMO_CL_STATUS') && (trim(CLICSHOPPING_APP_COLISSIMO_CL_STATUS) != '');
     }
 
     public function install()
     {
       parent::install();
 
-      if (defined('MODULE_SHIPPING_INSTALLED')) {
+      if (\defined('MODULE_SHIPPING_INSTALLED')) {
         $installed = explode(';', MODULE_SHIPPING_INSTALLED);
       }
 

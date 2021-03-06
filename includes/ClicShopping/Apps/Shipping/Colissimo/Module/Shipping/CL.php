@@ -55,7 +55,7 @@
       $this->code = 'CL';
       $this->title = $this->app->getDef('module_colissimo_title');
       $this->public_title = $this->app->getDef('module_colissimo_public_title');
-      $this->sort_order = defined('CLICSHOPPING_APP_COLISSIMO_CL_SORT_ORDER') ? CLICSHOPPING_APP_COLISSIMO_CL_SORT_ORDER : 0;
+      $this->sort_order = \defined('CLICSHOPPING_APP_COLISSIMO_CL_SORT_ORDER') ? CLICSHOPPING_APP_COLISSIMO_CL_SORT_ORDER : 0;
       $this->num_international = 6;
 
 // Activation module du paiement selon les groupes B2B
@@ -69,7 +69,7 @@
           }
         }
       } else {
-        if (defined('CLICSHOPPING_APP_COLISSIMO_CL_NO_AUTHORIZE') && CLICSHOPPING_APP_COLISSIMO_CL_NO_AUTHORIZE == 'True' && $CLICSHOPPING_Customer->getCustomersGroupID() == 0) {
+        if (\defined('CLICSHOPPING_APP_COLISSIMO_CL_NO_AUTHORIZE') && CLICSHOPPING_APP_COLISSIMO_CL_NO_AUTHORIZE == 'True' && $CLICSHOPPING_Customer->getCustomersGroupID() == 0) {
           if ($CLICSHOPPING_Customer->getCustomersGroupID() == 0) {
             if (CLICSHOPPING_APP_COLISSIMO_CL_STATUS == 'True') {
               $this->enabled = true;
@@ -80,15 +80,15 @@
         }
       }
 
-      if (defined('CLICSHOPPING_APP_COLISSIMO_CL_TAX_CLASS')) {
+      if (\defined('CLICSHOPPING_APP_COLISSIMO_CL_TAX_CLASS')) {
         if ($CLICSHOPPING_Customer->getCustomersGroupID() != 0) {
           if (B2BCommon::getTaxUnallowed($this->code) || !$CLICSHOPPING_Customer->isLoggedOn()) {
-            $this->tax_class = defined('CLICSHOPPING_APP_COLISSIMO_CL_TAX_CLASS') ? CLICSHOPPING_APP_COLISSIMO_CL_TAX_CLASS : 0;
+            $this->tax_class = \defined('CLICSHOPPING_APP_COLISSIMO_CL_TAX_CLASS') ? CLICSHOPPING_APP_COLISSIMO_CL_TAX_CLASS : 0;
 
           }
         } else {
           if (B2BCommon::getTaxUnallowed($this->code)) {
-            $this->tax_class = defined('CLICSHOPPING_APP_COLISSIMO_CL_TAX_CLASS') ? CLICSHOPPING_APP_COLISSIMO_CL_TAX_CLASS : 0;
+            $this->tax_class = \defined('CLICSHOPPING_APP_COLISSIMO_CL_TAX_CLASS') ? CLICSHOPPING_APP_COLISSIMO_CL_TAX_CLASS : 0;
           }
         }
       }
@@ -167,7 +167,7 @@
         $j = 0;
         $k = 0;
 
-        for ($i = 0, $iMax = count($table); $i < $iMax; $i += 2) {
+        for ($i = 0, $iMax = \count($table); $i < $iMax; $i += 2) {
 
           if ($this->shipping_weight > $table[$i])
             continue;
@@ -253,7 +253,7 @@
           $j = '0';
           $k = '0';
 
-          for ($i = 0, $iMax = count($table); $i < $iMax; $i += 2) {
+          for ($i = 0, $iMax = \count($table); $i < $iMax; $i += 2) {
 
             if ($this->shipping_weight > $table[$i])
               continue;
@@ -338,7 +338,7 @@
           $j = '0';
           $k = '0';
 
-          for ($i = 0, $iMax = count($table); $i < $iMax; $i += 2) {
+          for ($i = 0, $iMax = \count($table); $i < $iMax; $i += 2) {
             if ($this->shipping_weight > $table[$i])
               continue;
             if (($this->shipping_weight < $table[$i]) && ($j == 0)) {
@@ -397,7 +397,7 @@
           $this->icon = '';
         }
 
-        if (!is_null($this->icon)) $this->quotes['icon'] = '&nbsp;&nbsp;&nbsp;' . $this->icon;
+        if (!\is_null($this->icon)) $this->quotes['icon'] = '&nbsp;&nbsp;&nbsp;' . $this->icon;
 
         if ($this->shipping_weight < 30) {
           $this->quotes = array(
@@ -418,7 +418,7 @@
           $countries_table = constant('CLICSHOPPING_APP_COLISSIMO_CL_INT_COUNTRIES_' . $i);
 
           $country = preg_split('#[, ]#', $countries_table);
-          if (in_array($dest_country, $country)) {
+          if (\in_array($dest_country, $country)) {
             $dest_zone = $i;
             break;
           }
@@ -433,7 +433,7 @@
         $table = preg_split('#[:,]#', constant('CLICSHOPPING_APP_COLISSIMO_CL_INT_COST_' . $dest_zone));
         $cost = -1;
 
-        for ($i = 0, $n = count($table); $i < $n; $i += 2) {
+        for ($i = 0, $n = \count($table); $i < $n; $i += 2) {
           if ($this->shipping_weight <= $table[$i]) {
             $cost = $table[$i + 1] + $handling_fees;
             break;
@@ -458,7 +458,7 @@
 
     public function check()
     {
-      return defined('CLICSHOPPING_APP_COLISSIMO_CL_STATUS') && (trim(CLICSHOPPING_APP_COLISSIMO_CL_STATUS) != '');
+      return \defined('CLICSHOPPING_APP_COLISSIMO_CL_STATUS') && (trim(CLICSHOPPING_APP_COLISSIMO_CL_STATUS) != '');
     }
 
     public function install()
