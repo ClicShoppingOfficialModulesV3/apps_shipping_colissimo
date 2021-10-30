@@ -19,17 +19,17 @@
 
   class CL implements \ClicShopping\OM\Modules\ShippingInterface
   {
-    public $code;
+    public string $code;
     public $title;
     public $description;
     public $enabled = false;
     public $icon;
-    public $app;
+    public mixed $app;
     public $quotes;
     public $signature;
     public $public_title;
     public $api_version;
-    public $sort_order = 0;
+    public ?int $sort_order = 0;
     public $num_international;
     public $tax_class;
     public $group;
@@ -147,15 +147,15 @@
           if (!empty($this->icon)) $this->quotes['icon'] = HTML::image($this->icon, $this->title);
         }
 
-        $auto = constant('CLICSHOPPING_APP_COLISSIMO_CL_R1R5');
+        $auto = \constant('CLICSHOPPING_APP_COLISSIMO_CL_R1R5');
         $total = $CLICSHOPPING_ShoppingCart->show_total();
 
-        $cost = constant('CLICSHOPPING_APP_COLISSIMO_CL_NATIONAL');
-        $cost1 = constant('CLICSHOPPING_APP_COLISSIMO_CL_COLISSIMOR1_NATIONAL');
-        $cost2 = constant('CLICSHOPPING_APP_COLISSIMO_CL_COLISSIMOR2_NATIONAL');
-        $cost3 = constant('CLICSHOPPING_APP_COLISSIMO_CL_COLISSIMOR3_NATIONAL');
-        $cost4 = constant('CLICSHOPPING_APP_COLISSIMO_CL_COLISSIMOR4_NATIONAL');
-        $cost5 = constant('CLICSHOPPING_APP_COLISSIMO_CL_COLISSIMOR5_NATIONAL');
+        $cost = \constant('CLICSHOPPING_APP_COLISSIMO_CL_NATIONAL');
+        $cost1 = \constant('CLICSHOPPING_APP_COLISSIMO_CL_COLISSIMOR1_NATIONAL');
+        $cost2 = \constant('CLICSHOPPING_APP_COLISSIMO_CL_COLISSIMOR2_NATIONAL');
+        $cost3 = \constant('CLICSHOPPING_APP_COLISSIMO_CL_COLISSIMOR3_NATIONAL');
+        $cost4 = \constant('CLICSHOPPING_APP_COLISSIMO_CL_COLISSIMOR4_NATIONAL');
+        $cost5 = \constant('CLICSHOPPING_APP_COLISSIMO_CL_COLISSIMOR5_NATIONAL');
 
         $table = preg_split('#[:,]#', $cost);
         $table1 = preg_split('#[:,]#', $cost1);
@@ -222,7 +222,7 @@
 
       } elseif (($dest_country == 'GP') OR ($dest_country == 'MQ') OR ($dest_country == 'GF') OR ($dest_country == 'RE') OR ($dest_country == 'YT') OR ($dest_country == 'PM')) {
 
-        if (constant('CLICSHOPPING_APP_COLISSIMO_CL_DOM_STATUS') == 'True') {
+        if (\constant('CLICSHOPPING_APP_COLISSIMO_CL_DOM_STATUS') == 'True') {
           if ($this->shipping_weight < 30) {
             $this->quotes = ['id' => $this->code,
               'module' => $this->app->getDef('module_shipping_colissimo_text_title') . ' DOM (' . $this->shipping_weight . ' Kg)'
@@ -233,15 +233,15 @@
             if (!empty($this->icon)) $this->quotes['icon'] = HTML::image($this->icon, $this->title);
           }
 
-          $auto = constant('CLICSHOPPING_APP_COLISSIMO_CL_R1R5');
+          $auto = \constant('CLICSHOPPING_APP_COLISSIMO_CL_R1R5');
           $total = $CLICSHOPPING_ShoppingCart->show_total();
 
-          $cost = constant('CLICSHOPPING_APP_COLISSIMO_CL_DOM');
-          $cost1 = constant('CLICSHOPPING_APP_COLISSIMO_CLR1_DOM');
-          $cost2 = constant('CLICSHOPPING_APP_COLISSIMO_CLR2_DOM');
-          $cost3 = constant('CLICSHOPPING_APP_COLISSIMO_CLR3_DOM');
-          $cost4 = constant('CLICSHOPPING_APP_COLISSIMO_CLR4_DOM');
-          $cost5 = constant('CLICSHOPPING_APP_COLISSIMO_CLR5_DOM');
+          $cost = \constant('CLICSHOPPING_APP_COLISSIMO_CL_DOM');
+          $cost1 = \constant('CLICSHOPPING_APP_COLISSIMO_CLR1_DOM');
+          $cost2 = \constant('CLICSHOPPING_APP_COLISSIMO_CLR2_DOM');
+          $cost3 = \constant('CLICSHOPPING_APP_COLISSIMO_CLR3_DOM');
+          $cost4 = \constant('CLICSHOPPING_APP_COLISSIMO_CLR4_DOM');
+          $cost5 = \constant('CLICSHOPPING_APP_COLISSIMO_CLR5_DOM');
 //php5.3
           $table = preg_split('#[:,]#', $cost);
           $table1 = preg_split('#[:,]#', $cost1);
@@ -306,7 +306,7 @@
 
       } elseif (($dest_country == 'NC') OR ($dest_country == 'PF') OR ($dest_country == 'WF') OR ($dest_country == 'TF')) {
 
-        if (constant('CLICSHOPPING_APP_COLISSIMO_CL_TOM_STATUS') == 'True') {
+        if (\constant('CLICSHOPPING_APP_COLISSIMO_CL_TOM_STATUS') == 'True') {
 
           if ($this->shipping_weight < 30) {
             $this->quotes = ['id' => $this->app->vendor . '\\' . $this->app->code . '\\' . $this->code,
@@ -318,15 +318,15 @@
             if (!empty($this->icon)) $this->quotes['icon'] = HTML::image($this->icon, $this->title);
           }
 
-          $auto = constant('CLICSHOPPING_APP_COLISSIMO_CL_R1R5');
+          $auto = \constant('CLICSHOPPING_APP_COLISSIMO_CL_R1R5');
           $total = $CLICSHOPPING_ShoppingCart->show_total();
 
-          $cost = constant('CLICSHOPPING_APP_COLISSIMO_CL_TOM');
-          $cost1 = constant('CLICSHOPPING_APP_COLISSIMO_CLR1_TOM');
-          $cost2 = constant('CLICSHOPPING_APP_COLISSIMO_CLR2_TOM');
-          $cost3 = constant('CLICSHOPPING_APP_COLISSIMO_CLR3_TOM');
-          $cost4 = constant('CLICSHOPPING_APP_COLISSIMO_CLR4_TOM');
-          $cost5 = constant('CLICSHOPPING_APP_COLISSIMO_CLR5_TOM');
+          $cost = \constant('CLICSHOPPING_APP_COLISSIMO_CL_TOM');
+          $cost1 = \constant('CLICSHOPPING_APP_COLISSIMO_CLR1_TOM');
+          $cost2 = \constant('CLICSHOPPING_APP_COLISSIMO_CLR2_TOM');
+          $cost3 = \constant('CLICSHOPPING_APP_COLISSIMO_CLR3_TOM');
+          $cost4 = \constant('CLICSHOPPING_APP_COLISSIMO_CLR4_TOM');
+          $cost5 = \constant('CLICSHOPPING_APP_COLISSIMO_CLR5_TOM');
 
           $table = preg_split('#[:,]#', $cost);
           $table1 = preg_split('#[:,]#', $cost1);
@@ -389,7 +389,7 @@
           return $this->quotes;
         }
 
-      } elseif (constant('CLICSHOPPING_APP_COLISSIMO_CL_INT_STATUS') == 'True') {
+      } elseif (\constant('CLICSHOPPING_APP_COLISSIMO_CL_INT_STATUS') == 'True') {
         if (is_file($CLICSHOPPING_Template->getDirectoryTemplateImages() . 'logos/shipping/' . CLICSHOPPING_APP_COLISSIMO_CL_LOGO) && !empty(CLICSHOPPING_APP_COLISSIMO_CL_LOGO)) {
           $this->icon = $CLICSHOPPING_Template->getDirectoryTemplateImages() . 'logos/shipping/' . CLICSHOPPING_APP_COLISSIMO_CL_LOGO;
           $this->icon = HTML::image($this->icon, $this->title);
@@ -415,7 +415,7 @@
         $dest_zone = 0;
 
         for ($i = 1; $i <= $this->num_international; $i++) {
-          $countries_table = constant('CLICSHOPPING_APP_COLISSIMO_CL_INT_COUNTRIES_' . $i);
+          $countries_table = \constant('CLICSHOPPING_APP_COLISSIMO_CL_INT_COUNTRIES_' . $i);
 
           $country = preg_split('#[, ]#', $countries_table);
           if (\in_array($dest_country, $country)) {
@@ -430,7 +430,7 @@
           return $this->quotes;
         }
 
-        $table = preg_split('#[:,]#', constant('CLICSHOPPING_APP_COLISSIMO_CL_INT_COST_' . $dest_zone));
+        $table = preg_split('#[:,]#', \constant('CLICSHOPPING_APP_COLISSIMO_CL_INT_COST_' . $dest_zone));
         $cost = -1;
 
         for ($i = 0, $n = \count($table); $i < $n; $i += 2) {
