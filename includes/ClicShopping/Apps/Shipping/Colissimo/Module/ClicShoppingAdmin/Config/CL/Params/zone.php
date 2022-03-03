@@ -16,7 +16,7 @@
   class zone extends \ClicShopping\Apps\Shipping\Colissimo\Module\ClicShoppingAdmin\Config\ConfigParamAbstract
   {
     public $default = '0';
-    public $sort_order = 250;
+    public ?int $sort_order = 250;
 
     protected function init()
     {
