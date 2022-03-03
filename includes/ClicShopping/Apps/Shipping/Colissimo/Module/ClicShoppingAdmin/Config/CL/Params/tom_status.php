@@ -17,7 +17,7 @@
   class tom_status extends \ClicShopping\Apps\Shipping\Colissimo\Module\ClicShoppingAdmin\Config\ConfigParamAbstract
   {
     public $default = 'True';
-    public $sort_order = 1130;
+    public ?int $sort_order = 1130;
 
     protected function init()
     {
