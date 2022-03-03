@@ -14,7 +14,7 @@
   class colissimor3_national extends \ClicShopping\Apps\Shipping\Colissimo\Module\ClicShoppingAdmin\Config\ConfigParamAbstract
   {
     public $default = '0.500:9.95, 1:11.20, 2:12.15, 3:13.10, 5:15.00, 7:16.90, 10:19.75, 15:21.85, 30:28.15';
-    public $sort_order = 1030;
+    public ?int $sort_order = 1030;
 
     protected function init()
     {
