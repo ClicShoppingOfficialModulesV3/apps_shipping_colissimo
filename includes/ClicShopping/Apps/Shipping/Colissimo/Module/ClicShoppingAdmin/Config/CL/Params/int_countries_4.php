@@ -14,7 +14,7 @@
   class int_countries_4 extends \ClicShopping\Apps\Shipping\Colissimo\Module\ClicShoppingAdmin\Config\ConfigParamAbstract
   {
     public $default = 'AS, AQ, AR, AW, AU, BS, BH, BD, BB, BZ, BT, BO, BV, BR, IO, BN, KH, KY, CL, CN, CX, CC, CO, KM, CK, CR, CU, DO';
-    public $sort_order = 1260;
+    public ?int $sort_order = 1260;
 
     protected function init()
     {

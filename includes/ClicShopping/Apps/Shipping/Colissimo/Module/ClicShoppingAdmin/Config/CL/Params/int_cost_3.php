@@ -14,7 +14,7 @@
   class int_cost_3 extends \ClicShopping\Apps\Shipping\Colissimo\Module\ClicShoppingAdmin\Config\ConfigParamAbstract
   {
     public $default = '1:22.50, 2:30.10, 3:39.50, 4:48.90, 5:58.30, 6:67.70, 7:77.10, 8:86.50, 9:95.90, 10:105.30, 15:128.80, 20:152.30';
-    public $sort_order = 1250;
+    public ?int $sort_order = 1250;
 
     protected function init()
     {

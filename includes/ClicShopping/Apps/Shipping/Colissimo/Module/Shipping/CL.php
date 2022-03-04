@@ -254,46 +254,100 @@
           $k = '0';
 
           for ($i = 0, $iMax = \count($table); $i < $iMax; $i += 2) {
-
             if ($this->shipping_weight > $table[$i])
               continue;
             if (($this->shipping_weight < $table[$i]) && ($j == '0')) {
               if ($auto == 'True') {
                 if (($total <= 50) && ($k == '0')) {
-                  $methods[] = array('id' => 'DOMR1', 'title' => $this->app->getDef('module_shipping_colissimor1_text_title'), 'cost' => $table1[$i + 1] + $handling_fees);
+                  $methods[] = [
+                    'id' => 'DOMR1',
+                    'title' => $this->app->getDef('module_shipping_colissimor1_text_title'),
+                    'cost' => $table1[$i + 1] + $handling_fees
+                  ];
+
                   $k++;
                 } elseif (($total > 50) && ($total <= 200) && ($k == '0')) {
-                  $methods[] = array('id' => 'DOMR2', 'title' => $this->app->getDef('module_shipping_colissimor2_text_title'), 'cost' => $table2[$i + 1] + $handling_fees);
+                  $methods[] = [
+                    'id' => 'DOMR2',
+                    'title' => $this->app->getDef('module_shipping_colissimor2_text_title'),
+                    'cost' => $table2[$i + 1] + $handling_fees
+                  ];
+
                   $k++;
                 } elseif (($total > 200) && ($total <= 400) && ($k == '0')) {
-                  $methods[] = array('id' => 'DOMR3', 'title' => $this->app->getDef('module_shipping_colissimor3_text_title'), 'cost' => $table3[$i + 1] + $handling_fees);
+                  $methods[] = [
+                    'id' => 'DOMR3',
+                    'title' => $this->app->getDef('module_shipping_colissimor3_text_title'),
+                    'cost' => $table3[$i + 1] + $handling_fees
+                  ];
+
                   $k++;
                 } elseif (($total > 400) && ($total <= 600) && ($k == '0')) {
-                  $methods[] = array('id' => 'DOMR4', 'title' => $this->app->getDef('module_shipping_colissimor4_text_title'), 'cost' => $table4[$i + 1] + $handling_fees);
+                  $methods[] = [
+                    'id' => 'DOMR4',
+                    'title' => $this->app->getDef('module_shipping_colissimor4_text_title'),
+                    'cost' => $table4[$i + 1] + $handling_fees
+                  ];
+
                   $k++;
                 } elseif (($total > 600) && ($k == '0')) {
-                  $methods[] = array('id' => 'DOMR5', 'title' => $this->app->getDef('module_shipping_colissimor5_text_title'), 'cost' => $table5[$i + 1] + $handling_fees);
+                  $methods[] = [
+                    'id' => 'DOMR5',
+                    'title' => $this->app->getDef('module_shipping_colissimor5_text_title'),
+                    'cost' => $table5[$i + 1] + $handling_fees
+                  ];
+
                   $k++;
                 }
               } else {
                 if ($method == '' || $method == 'DOMR0') {
-                  $methods[] = array('id' => 'DOMR0', 'title' => $this->app->getDef('module_shipping_colissimor5_text_title'), 'cost' => $table[$i + 1] + $handling_fees);
+                  $methods[] = [
+                    'id' => 'DOMR0',
+                    'title' => $this->app->getDef('module_shipping_colissimor5_text_title'),
+                    'cost' => $table[$i + 1] + $handling_fees
+                  ];
                 }
+
                 if ($method == '' || $method == 'DOMR1') {
-                  $methods[] = array('id' => 'DOMR1', 'title' => $this->app->getDef('module_shipping_colissimor1_text_title'), 'cost' => $table1[$i + 1] + $handling_fees);
+                  $methods[] = [
+                    'id' => 'DOMR1',
+                    'title' => $this->app->getDef('module_shipping_colissimor1_text_title'),
+                    'cost' => $table1[$i + 1] + $handling_fees
+                  ];
                 }
+
                 if ($method == '' || $method == 'DOMR2') {
-                  $methods[] = array('id' => 'DOMR2', 'title' => $this->app->getDef('module_shipping_colissimor2_text_title'), 'cost' => $table2[$i + 1] + $handling_fees);
+                  $methods[] = [
+                    'id' => 'DOMR2',
+                    'title' => $this->app->getDef('module_shipping_colissimor2_text_title'),
+                    'cost' => $table2[$i + 1] + $handling_fees
+                  ];
                 }
+
                 if ($method == '' || $method == 'DOMR3') {
-                  $methods[] = array('id' => 'DOMR3', 'title' => $this->app->getDef('module_shipping_colissimor3_text_title'), 'cost' => $table3[$i + 1] + $handling_fees);
+                  $methods[] = [
+                    'id' => 'DOMR3',
+                    'title' => $this->app->getDef('module_shipping_colissimor3_text_title'),
+                    'cost' => $table3[$i + 1] + $handling_fees
+                  ];
                 }
+
                 if ($method == '' || $method == 'DOMR4') {
-                  $methods[] = array('id' => 'DOMR4', 'title' => $this->app->getDef('module_shipping_colissimor4_text_title'), 'cost' => $table4[$i + 1] + $handling_fees);
+                  $methods[] = [
+                    'id' => 'DOMR4',
+                    'title' => $this->app->getDef('module_shipping_colissimor4_text_title'),
+                    'cost' => $table4[$i + 1] + $handling_fees
+                  ];
                 }
+
                 if ($method == '' || $method == 'DOMR5') {
-                  $methods[] = array('id' => 'DOMR5', 'title' => $this->app->getDef('module_shipping_colissimor5_text_title'), 'cost' => $table5[$i + 1] + $handling_fees);
+                  $methods[] = [
+                    'id' => 'DOMR5',
+                    'title' => $this->app->getDef('module_shipping_colissimor5_text_title'),
+                    'cost' => $table5[$i + 1] + $handling_fees
+                  ];
                 }
+
                 $j = '2';
               }
             }
@@ -309,7 +363,8 @@
         if (\constant('CLICSHOPPING_APP_COLISSIMO_CL_TOM_STATUS') == 'True') {
 
           if ($this->shipping_weight < 30) {
-            $this->quotes = ['id' => $this->app->vendor . '\\' . $this->app->code . '\\' . $this->code,
+            $this->quotes = [
+              'id' => $this->app->vendor . '\\' . $this->app->code . '\\' . $this->code,
               'module' => $this->app->getDef('module_shipping_colissimo_text_title') . ' TOM (' . $this->shipping_weight . ' Kg)'
             ];
 
@@ -379,6 +434,7 @@
                 if ($method == '' || $method == 'TOMR5') {
                   $methods[] = array('id' => 'TOMR5', 'title' => $this->app->getDef('module_shipping_colissimor5_text_title'), 'cost' => $table5[$i + 1] + $handling_fees);
                 }
+
                 $j = '2';
               }
             }
@@ -400,11 +456,12 @@
         if (!\is_null($this->icon)) $this->quotes['icon'] = '&nbsp;&nbsp;&nbsp;' . $this->icon;
 
         if ($this->shipping_weight < 30) {
-          $this->quotes = array(
+          $this->quotes = [
             'id' => $this->app->vendor . '\\' . $this->app->code . '\\' . $this->code,
             'module' => $this->app->getDef('module_shipping_colissimo_text_title') . ' International (' . $this->shipping_weight . ' Kg)',
-            'methods' => array()
-          );
+            'methods' => []
+          ];
+
           if (!empty($this->icon)) $this->quotes['icon'] = HTML::image($this->icon, $this->title);
         }
 
@@ -418,6 +475,7 @@
           $countries_table = \constant('CLICSHOPPING_APP_COLISSIMO_CL_INT_COUNTRIES_' . $i);
 
           $country = preg_split('#[, ]#', $countries_table);
+
           if (\in_array($dest_country, $country)) {
             $dest_zone = $i;
             break;
@@ -446,11 +504,11 @@
           return $this->quotes;
         }
 
-        $this->quotes['methods'][] = array(
+        $this->quotes['methods'][] = [
           'id' => $this->app->vendor . '\\' . $this->app->code . '\\' . $this->code,
           'title' => $this->app->getDef('module_shipping_colissimo_int_text_way') . ' ' . $CLICSHOPPING_Order->delivery['country']['title'],
           'cost' => $cost + $handling_fees
-        );
+       ];
 
         return $this->quotes;
       }

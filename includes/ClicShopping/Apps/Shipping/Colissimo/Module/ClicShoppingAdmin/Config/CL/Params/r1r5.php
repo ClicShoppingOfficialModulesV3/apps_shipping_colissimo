@@ -17,7 +17,7 @@
   class r1r5 extends \ClicShopping\Apps\Shipping\Colissimo\Module\ClicShoppingAdmin\Config\ConfigParamAbstract
   {
     public $default = 'True';
-    public $sort_order = 400;
+    public ?int $sort_order = 400;
 
     protected function init()
     {
