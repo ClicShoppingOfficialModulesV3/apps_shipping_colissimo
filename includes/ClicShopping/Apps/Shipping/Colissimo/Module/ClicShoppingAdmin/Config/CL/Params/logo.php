@@ -14,7 +14,7 @@
   class logo extends \ClicShopping\Apps\Shipping\Colissimo\Module\ClicShoppingAdmin\Config\ConfigParamAbstract
   {
     public $default = 'colissimo.png';
-    public $sort_order = 30;
+    public ?int $sort_order = 30;
 
     protected function init()
     {
